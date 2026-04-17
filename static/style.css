@@ -1,0 +1,100 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin-top: 50px;
+    padding: 20px;
+    background: rgba(0,0,0,0.6);
+    border-radius: 12px;
+    display: inline-block;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.title {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    animation: glow 2s infinite alternate;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.drop-zone {
+    border: 2px dashed #ff6f61;
+    border-radius: 12px;
+    padding: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+.drop-zone:hover {
+    background: rgba(255, 111, 97, 0.2);
+    transform: scale(1.02);
+}
+
+button {
+    padding: 12px 25px;
+    background: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+button:hover {
+    background: #ff3b2e;
+    transform: scale(1.05);
+}
+
+input[type="range"] {
+    width: 300px;
+}
+
+#preview img {
+    max-width: 200px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #000;
+    transition: transform 0.3s ease;
+}
+#preview img:hover {
+    transform: scale(1.1);
+}
+
+.loading {
+    margin-top: 20px;
+}
+.hidden {
+    display: none;
+}
+.spinner {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #ff6f61;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px #ff6f61; }
+    to { text-shadow: 0 0 20px #ff3b2e; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px);}
+    to { opacity: 1; transform: translateY(0);}
+}
