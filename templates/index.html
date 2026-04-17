@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Advanced Image Compressor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">✨ Advanced Image Compressor ✨</h1>
+        <p class="subtitle">Drag & Drop your images, resize, compress, and optimize instantly</p>
+
+        <form action="/compress" method="post" enctype="multipart/form-data" id="uploadForm">
+            <div id="dropZone" class="drop-zone">
+                <p>📂 Drag & Drop Images Here or Click to Select</p>
+                <input type="file" name="images" accept="image/*" multiple required hidden>
+            </div><br>
+
+            <label for="quality">Quality (10–100):</label>
+            <input type="range" id="quality" name="quality" min="10" max="100" value="70" oninput="document.getElementById('qval').innerText=this.value">
+            <span id="qval">70</span><br><br>
+
+            <label for="format">Output Format:</label>
+            <select name="format" id="format">
+                <option value="JPEG">JPEG</option>
+                <option value="PNG">PNG</option>
+                <option value="WEBP">WebP</option>
+            </select><br><br>
+
+            <button type="submit" id="compressBtn">🚀 Compress</button>
+        </form>
+
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Processing your images...</p>
+        </div>
+
+        <h3>Preview</h3>
+        <div id="preview"></div>
+
+        <!-- Google Ads -->
+        <div style="margin-top:20px;">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-XXXXXX"
+                 data-ad-slot="YYYYYY"
+                 data-ad-format="auto"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+    </div>
+</body>
+</html>
